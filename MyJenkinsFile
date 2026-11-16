@@ -6,6 +6,20 @@ stages {
     echo "This is Build stage"
 }
 }
+stages ('TEST PARALLEL') {
+parallel {
+  stage ('TEST ON CHROME') {
+  steps {
+    echo 'This is test on chrome browser'
+}
+}
+stage ('TEST ON SAFARI') {
+  steps {
+    echo 'This is test on safari browser'
+}
+}
+}
+}
  stage ('TEST') {
   steps {
     echo "This is test stage"
