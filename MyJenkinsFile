@@ -7,6 +7,7 @@ stages {
   stage ('BUILD') {
   steps {
     echo "This is Build stage"
+echo "$NAME"
 }
 }
 stage ('TEST PARALLEL') {
@@ -14,11 +15,13 @@ parallel {
   stage ('TEST ON CHROME') {
   steps {
     echo 'This is test on chrome browser'
+echo "$NAME"
 }
 }
 stage ('TEST ON SAFARI') {
   steps {
     echo 'This is test on safari browser'
+echo "$NAME"
 }
 }
 }
